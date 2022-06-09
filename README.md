@@ -16,11 +16,10 @@ A análise de requisitos através de entrevistas com uma orientadora educacional
 * [x] Deverá permitir o CRUD de cursos; 
 * [x] Deverá permitir o CRUD de turmas; 
 * [x] Deverá permitir o CRUD de alunos; 
-* [ ] Deverá permitir a adição de anotações para cada aluno;
-* [ ] Deverá permitir a remoção de anotações específicas para cada aluno;
+* [ ] Deverá permitir o CRUD de conversações;
 * [ ] Deverá permitir a visualização da quantidade de anotações de cada aluno pelo ID;
-* [ ] Deverá permitir o login do usuário;
-* [ ] Deverá permitir o deslogin do usuário;
+* [ ] Deverá permitir o login do admin;
+* [ ] Deverá permitir o logoff do admin;
 * [ ] Deverá permitir a geração de relatórios de atendimentos por turma, definindo intervalo de datas entre os atendimentos;
 * [ ] Deverá permitir a importação de alunos para cada turma (padrão CSV);
 
@@ -35,14 +34,13 @@ A análise de requisitos através de entrevistas com uma orientadora educacional
 * Desenvolver no modelo TDD (Test-driven development);
 * Trabalhar Migrations para facilitar futuras manutenções no banco de dados;
 
-
 ## 2.3 - Regras de negócio
-* Não poderá realizar CRUD de turmas, alunos, cursos e anotações caso o usuário não esteja logado com um JWT válido;
+* [ ] Não poderá realizar CRUD de turmas, alunos, cursos e anotações caso o usuário não esteja logado com um JWT válido;
 * [x] Não poderá adicionar cursos com nomes já existentes;
 * [x] Não poderá adicionar turma sem informar um curso válido;
 * [x] Não poderá adicionar aluno sem informar uma turma válida; 
-* Não poderá adicionar anotações sem informar um aluno válido;
-* Não poderá adicionar um arquivo de tipo inválido; 
+* [ ] Não poderá adicionar anotações sem informar um aluno válido;
+* [ ] Não poderá adicionar um arquivo de tipo inválido; 
 
 ## 2.4 - Modelagem Lógica da Aplicação
 Modelagem lógica da aplicação com base no levantamento da análise de requisitos:

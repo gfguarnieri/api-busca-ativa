@@ -9,13 +9,16 @@
     "dev": "ts-node-dev -r tsconfig-paths/register --transpile-only --inspect --ignore-watch node_modules --respawn src/server.ts",
     "migration:create": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:create",
     "migration:run": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run -d ./src/shared/infra/typeorm/index.ts",
+    "seed": "ts-node-dev -r tsconfig-paths/register ./src/shared/infra/typeorm/seeds/CreateAdminUse.ts",
     "migration:revert": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:revert -d ./src/shared/infra/typeorm/index.ts",
     "test": "jest",
     "commit": "cz"
   },
   "dependencies": {
+    "@types/bcryptjs": "^2.4.2",
     "@types/express": "^4.17.13",
     "@types/uuid": "^8.3.4",
+    "bcryptjs": "^2.4.3",
     "commitizen": "^4.2.4",
     "eslint-import-resolver-typescript": "^2.7.1",
     "eslint-plugin-import-helpers": "^1.2.1",
