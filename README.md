@@ -43,7 +43,6 @@ A análise de requisitos através de entrevistas com uma orientadora educacional
 * Não poderá adicionar aluno sem informar uma turma válida; 
 * Não poderá adicionar anotações sem informar um aluno válido;
 * Não poderá adicionar um arquivo de tipo inválido; 
-* Não poderá adicionar um arquivo com tamanho superior a 1MB;
 
 ## 2.4 - Modelagem Lógica da Aplicação
 Modelagem lógica da aplicação com base no levantamento da análise de requisitos:
