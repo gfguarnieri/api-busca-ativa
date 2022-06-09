@@ -1,7 +1,7 @@
 import { BuscaAtivaException } from '@errors/BuscaAtivaException';
-import { Student } from '@modules/courses/infra/typeorm/entities/Student';
 import { IClassroomsRepository } from '@modules/courses/repositories/IClassroomsRepository';
 import { IStudentsRepository } from '@modules/courses/repositories/IStudentsRepository';
+import { Student } from '@modules/students/infra/typeorm/entities/Student';
 import { inject, injectable } from 'tsyringe';
 
 interface IRequest {

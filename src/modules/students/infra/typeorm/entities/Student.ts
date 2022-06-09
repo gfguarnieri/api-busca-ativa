@@ -3,7 +3,7 @@ import {
 } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
 
-import { Classroom } from './Classroom';
+import { Classroom } from '../../../../courses/infra/typeorm/entities/Classroom';
 
 @Entity('students')
 class Student {

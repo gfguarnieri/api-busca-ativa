@@ -1,6 +1,6 @@
 import { BuscaAtivaException } from '@errors/BuscaAtivaException';
 import { InMemoryClassroomsRepository } from '@modules/courses/repositories/in-memory/InMemoryClassroomsRepository';
-import { InMemoryStudentsRepository } from '@modules/courses/repositories/in-memory/InMemoryStudentsRepository';
+import { InMemoryStudentsRepository } from '@modules/students/repositories/in-memory/InMemoryStudentsRepository';
 
 import { CreateStudentUseCase } from './CreateStudentUseCase';
 

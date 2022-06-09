@@ -1,7 +1,7 @@
-import { ICreateStudentDTO } from '@modules/courses/dtos/ICreateStudentDTO';
-import { Student } from '@modules/courses/infra/typeorm/entities/Student';
+import { ICreateStudentDTO } from '@modules/students/dtos/ICreateStudentDTO';
+import { Student } from '@modules/students/infra/typeorm/entities/Student';
 
-import { IStudentsRepository } from '../IStudentsRepository';
+import { IStudentsRepository } from '../../../courses/repositories/IStudentsRepository';
 
 class InMemoryStudentsRepository implements IStudentsRepository {
   private studentsRepository: Student[] = [];

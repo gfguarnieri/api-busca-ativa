@@ -1,4 +1,4 @@
-import { CreateStudentController } from '@modules/courses/useCases/createStudent/CreateStudentController';
+import { CreateStudentController } from '@modules/students/useCases/createStudent/CreateStudentController';
 import { Router } from 'express';
 
 const studentsRoutes = Router();

@@ -1,5 +1,5 @@
-import { ICreateStudentDTO } from '@modules/courses/dtos/ICreateStudentDTO';
 import { IStudentsRepository } from '@modules/courses/repositories/IStudentsRepository';
+import { ICreateStudentDTO } from '@modules/students/dtos/ICreateStudentDTO';
 import { Repository } from 'typeorm';
 
 import { dataSource } from '@shared/infra/typeorm';
