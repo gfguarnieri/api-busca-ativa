@@ -1,0 +1,49 @@
+{
+  "name": "api-busca-ativa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/gfguarnieri/api-busca-ativa",
+  "author": "Giovanni Guarnieri <gfguarnieri@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev -r tsconfig-paths/register --transpile-only --inspect --ignore-watch node_modules --respawn src/server.ts",
+    "migration:create": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:create",
+    "migration:run": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run -d ./src/shared/infra/typeorm/index.ts",
+    "migration:revert": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:revert -d ./src/shared/infra/typeorm/index.ts",
+    "test": "jest",
+    "commit": "cz"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "@types/uuid": "^8.3.4",
+    "commitizen": "^4.2.4",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import-helpers": "^1.2.1",
+    "eslint-plugin-jest": "^26.4.6",
+    "express": "^4.18.1",
+    "express-async-errors": "^3.1.1",
+    "pg": "^8.7.3",
+    "reflect-metadata": "^0.1.13",
+    "ts-jest": "^28.0.4",
+    "ts-node": "^10.8.1",
+    "tsyringe": "^4.7.0",
+    "typeorm": "^0.3.6",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^28.1.0",
+    "@types/node": "^17.0.40",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^28.1.0",
+    "nodemon": "^2.0.16",
+    "prettier": "^2.6.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.7.2"
+  }
+}
