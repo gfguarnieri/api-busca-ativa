@@ -15,7 +15,7 @@ A análise de requisitos através de entrevistas com uma orientadora educacional
 ## 2.1 - Requisitos funcionais
 * [x] Deverá permitir o CRUD de cursos; 
 * [x] Deverá permitir o CRUD de turmas; 
-* [ ] Deverá permitir o CRUD de alunos; 
+* [x] Deverá permitir o CRUD de alunos; 
 * [ ] Deverá permitir a adição de anotações para cada aluno;
 * [ ] Deverá permitir a remoção de anotações específicas para cada aluno;
 * [ ] Deverá permitir a visualização da quantidade de anotações de cada aluno pelo ID;
@@ -40,7 +40,7 @@ A análise de requisitos através de entrevistas com uma orientadora educacional
 * Não poderá realizar CRUD de turmas, alunos, cursos e anotações caso o usuário não esteja logado com um JWT válido;
 * [x] Não poderá adicionar cursos com nomes já existentes;
 * [x] Não poderá adicionar turma sem informar um curso válido;
-* Não poderá adicionar aluno sem informar uma turma válida; 
+* [x] Não poderá adicionar aluno sem informar uma turma válida; 
 * Não poderá adicionar anotações sem informar um aluno válido;
 * Não poderá adicionar um arquivo de tipo inválido; 
 

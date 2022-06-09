@@ -1,5 +1,5 @@
-import { IStudentsRepository } from '@modules/courses/repositories/IStudentsRepository';
 import { ICreateStudentDTO } from '@modules/students/dtos/ICreateStudentDTO';
+import { IStudentsRepository } from '@modules/students/repositories/IStudentsRepository';
 import { Repository } from 'typeorm';
 
 import { dataSource } from '@shared/infra/typeorm';
@@ -31,14 +31,21 @@ class StudentsRepository implements IStudentsRepository {
     return student;
   }
 
-  findById(student_id: string): Promise<Student> {
-    throw new Error('Method not implemented.');
+  async findById(student_id: string): Promise<Student> {
+    const student = await this.repository.findOneBy({ id: student_id });
+    return student;
   }
-  getAll(): Promise<Student[]> {
-    throw new Error('Method not implemented.');
-  }
-  listByClassroomId(): Promise<Student[]> {
-    throw new Error('Method not implemented.');
+
+  async filter(name?: string, fk_classroom?: string): Promise<Student[]> {
+    const query = await this.repository.createQueryBuilder('student').select('*');
+    if (name) {
+      query.andWhere('name ILIKE :name', { name: `%${name}%` });
+    }
+    if (fk_classroom) {
+      query.andWhere('fk_classroom = :fk_classroom', { fk_classroom });
+    }
+    const students = query.execute();
+    return students;
   }
 }
 
