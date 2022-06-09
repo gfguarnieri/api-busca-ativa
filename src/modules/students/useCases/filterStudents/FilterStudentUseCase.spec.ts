@@ -10,6 +10,16 @@ describe('Filter Students Use Case', () => {
     filterStudentsUseCase = new FilterStudentsUseCase(studentsRepository);
   });
 
+  it('Should be able to filter students by name and fk_classroom', async () => {
+    const student = await studentsRepository.create({
+      cellphone: '(15) 12345-1234',
+      fk_classroom: '1',
+      name: 'Giovanni',
+    });
+    const students = await filterStudentsUseCase.execute({ name: 'Giov', fk_classroom: '1' });
+    expect(students[0]).toMatchObject(student);
+  });
+
   it('Should be able to filter students by name', async () => {
     const student = await studentsRepository.create({
       cellphone: '(15) 12345-1234',
@@ -27,6 +37,16 @@ describe('Filter Students Use Case', () => {
       name: 'Giovanni',
     });
     const students = await filterStudentsUseCase.execute({ fk_classroom: '1' });
+    expect(students[0]).toMatchObject(student);
+  });
+
+  it('Should be able to list all students', async () => {
+    const student = await studentsRepository.create({
+      cellphone: '(15) 12345-1234',
+      fk_classroom: '1',
+      name: 'Giovanni',
+    });
+    const students = await filterStudentsUseCase.execute({});
     expect(students[0]).toMatchObject(student);
   });
 });

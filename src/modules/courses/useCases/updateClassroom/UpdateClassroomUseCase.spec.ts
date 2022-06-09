@@ -23,13 +23,13 @@ describe('Update Classroom Use Case', () => {
     });
     const classroom = await classroomRepository.create({
       year: 2021,
-      semester: 5,
+      semester: 1,
       fk_course: course.id,
     });
 
     const classroomUpdated = await updateClassroomUseCase.execute(classroom.id, {
       year: 2005,
-      semester: 5,
+      semester: 2,
       fk_course: course.id,
     });
 
@@ -46,7 +46,7 @@ describe('Update Classroom Use Case', () => {
 
       await updateClassroomUseCase.execute('1234', {
         year: 2005,
-        semester: 5,
+        semester: 1,
         fk_course: course.id,
       });
     }).rejects.toBeInstanceOf(BuscaAtivaException);
@@ -54,10 +54,21 @@ describe('Update Classroom Use Case', () => {
 
   it('Should not be able to update a classroom with fk_course invalid', async () => {
     expect(async () => {
-      await updateClassroomUseCase.execute('1234', {
+      const course = await coursesRepository.create({
+        name: 'Desenvolvimento de Sistemas',
+        coordinator: 'Felipe Vieira',
+        module_duration: 'S',
+      });
+      const classroom = await classroomRepository.create({
+        year: 2021,
+        semester: 2,
+        fk_course: course.id,
+      });
+
+      await updateClassroomUseCase.execute(classroom.id, {
         year: 2005,
-        semester: 5,
-        fk_course: '1234',
+        semester: 1,
+        fk_course: '0000',
       });
     }).rejects.toBeInstanceOf(BuscaAtivaException);
   });
