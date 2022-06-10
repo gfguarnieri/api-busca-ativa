@@ -18,7 +18,7 @@ A análise de requisitos através de entrevistas com uma orientadora educacional
 * [x] Deverá permitir o CRUD de alunos; 
 * [ ] Deverá permitir o CRUD de conversações;
 * [ ] Deverá permitir a visualização da quantidade de anotações de cada aluno pelo ID;
-* [ ] Deverá permitir o login do admin;
+* [x] Deverá permitir o login do admin;
 * [ ] Deverá permitir o logoff do admin;
 * [ ] Deverá permitir a geração de relatórios de atendimentos por turma, definindo intervalo de datas entre os atendimentos;
 * [ ] Deverá permitir a importação de alunos para cada turma (padrão CSV);
@@ -35,7 +35,7 @@ A análise de requisitos através de entrevistas com uma orientadora educacional
 * Trabalhar Migrations para facilitar futuras manutenções no banco de dados;
 
 ## 2.3 - Regras de negócio
-* [ ] Não poderá realizar CRUD de turmas, alunos, cursos e anotações caso o usuário não esteja logado com um JWT válido;
+* [x] Não poderá realizar CRUD de turmas, alunos, cursos e anotações caso o usuário não esteja logado com um token válido (middlewares);
 * [x] Não poderá adicionar cursos com nomes já existentes;
 * [x] Não poderá adicionar turma sem informar um curso válido;
 * [x] Não poderá adicionar aluno sem informar uma turma válida; 
