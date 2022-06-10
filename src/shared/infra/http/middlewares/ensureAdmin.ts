@@ -10,22 +10,23 @@ interface IPayLoad{
     id: string;
 }
 
+function checkAdminUser(id: string) {
+  const adminsRepository = new AdminsRepository();
+  const admin = adminsRepository.findById(id);
+  if (!admin) {
+    throw new BuscaAtivaException('Invalid ID', 500);
+  }
+}
+
 export function ensureAdmin(request: Request, response: Response, next: NextFunction) {
   const auth = request.headers.authorization;
-  if (!auth) {
-    throw new BuscaAtivaException('A token is necessary.', 500);
-  }
-  const [, token] = auth.split(' ');
   try {
+    const [, token] = auth.split(' ');
     const { id } = verify(token, process.env.SECRET_KEY) as IPayLoad;
-    const adminsRepository = new AdminsRepository();
-    const admin = adminsRepository.findById(id);
-    if (!admin) {
-      throw new BuscaAtivaException('Invalid ID', 500);
-    }
+    checkAdminUser(id);
     request.user = { id };
-    next();
   } catch {
-    throw new BuscaAtivaException('Token invalid', 500);
+    throw new BuscaAtivaException('Invalid token', 500);
   }
+  next();
 }
