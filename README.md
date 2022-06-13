@@ -1,4 +1,4 @@
-# 1 - API do Busca Ativa Escolar
+# 1 - API do Busca Ativa Escolar - DEV
 API responsável por lidar com as informações do sistema <a href="https://github.com/gfguarnieri/webBuscaAtiva">**Busca Ativa Escolar**</a>
 
 ## 1.1 - Tecnologias utilizadas
