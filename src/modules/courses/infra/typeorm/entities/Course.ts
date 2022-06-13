@@ -1,7 +1,9 @@
 import {
-  Column, CreateDateColumn, Entity, PrimaryColumn,
+  Column, CreateDateColumn, Entity, OneToMany, PrimaryColumn,
 } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
+
+import { Classroom } from './Classroom';
 
 @Entity('courses')
 class Course {
@@ -13,6 +15,8 @@ class Course {
     coordinator: string;
   @Column()
     module_duration: string;
+  @OneToMany(() => Classroom, (classroom) => classroom.course)
+    classrooms: Classroom[];
   @CreateDateColumn()
     created_at: Date;
   @CreateDateColumn()

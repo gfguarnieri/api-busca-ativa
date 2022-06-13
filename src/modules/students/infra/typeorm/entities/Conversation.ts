@@ -10,15 +10,12 @@ import { Student } from './Student';
 class Conversation {
     @PrimaryColumn()
       id: string;
-
     @ManyToOne(() => Student)
     @JoinColumn({ name: 'fk_student' })
       student: Student;
-
     @ManyToOne(() => Admin)
     @JoinColumn({ name: 'fk_admin' })
       admin: Admin;
-
     @Column()
       fk_student: string;
     @Column()
@@ -31,7 +28,6 @@ class Conversation {
       created_at: Date;
     @CreateDateColumn()
       updated_at: Date;
-
     constructor() {
       if (!this.id) {
         this.id = uuidv4();

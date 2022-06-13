@@ -51,9 +51,6 @@ class InMemoryConversationsRepository implements IConversationsRepository {
   async filter({ start, end, fk_student }: IFilterConversations): Promise<Conversation[]> {
     const conversations = this.conversationsRepository.filter(
       (conversation) => {
-        if (!fk_student && (!start && !end)) {
-          return true;
-        }
         if (fk_student && !(start && end)) {
           return conversation.fk_student === fk_student;
         }
@@ -66,7 +63,7 @@ class InMemoryConversationsRepository implements IConversationsRepository {
           return conversation.date >= start
             && conversation.date <= end;
         }
-        return false;
+        return true;
       },
     );
     return conversations;

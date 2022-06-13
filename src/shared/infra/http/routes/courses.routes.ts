@@ -10,6 +10,7 @@ const deleteCourseController = new DeleteCourseController();
 const listCoursesController = new ListCoursesController();
 
 const coursesRoutes = Router();
+
 coursesRoutes.post('/', createCourseController.handle);
 coursesRoutes.put('/:id', updateCourseController.handle);
 coursesRoutes.delete('/:id', deleteCourseController.handle);

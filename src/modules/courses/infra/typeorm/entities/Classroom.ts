@@ -14,20 +14,17 @@ class Classroom {
       year: number;
     @Column()
       semester: number;
-    // @ManyToOne(() => Course)
-    // @JoinColumn({ name: 'fk_course' })
-    //   course: Course;
-
+    @ManyToOne(() => Course)
+    @JoinColumn({ name: 'fk_course' })
+      course: Course;
     @Column()
       fk_course: string;
     @CreateDateColumn()
       created_at: Date;
     @CreateDateColumn()
       updated_at: Date;
-
     @OneToMany(() => Student, (student) => student.classroom)
       students: Student[];
-
     constructor() {
       if (!this.id) {
         this.id = uuidv4();

@@ -14,14 +14,11 @@ class Student {
       name: string;
     @Column()
       cellphone: string;
-
     @ManyToOne(() => Classroom)
     @JoinColumn({ name: 'fk_classroom' })
       classroom: Classroom;
-
     @OneToMany(() => Conversation, (conversation) => conversation.student)
       conversations: Conversation[];
-
     @Column()
       fk_classroom: string;
     @CreateDateColumn()

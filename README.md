@@ -18,7 +18,7 @@ A análise de requisitos foi desenvolvida através de entrevistas com uma orient
 * [x] Deverá permitir o CRUD de alunos; 
 * [x] Deverá permitir o CRUD de conversações;
 * [x] Deverá permitir a filtragem da alunos pelo id da turma;
-* [ ] Deverá permitir a visualização da quantidade de anotações de cada aluno pelo ID;
+* [x] Deverá permitir a visualização da quantidade de anotações de cada aluno pelo ID;
 * [x] Deverá permitir o login do admin;
 * [ ] Deverá permitir o logoff do admin;
 * [ ] Deverá permitir a geração de relatórios de atendimentos por turma, definindo intervalo de datas entre os atendimentos;
@@ -31,9 +31,10 @@ A análise de requisitos foi desenvolvida através de entrevistas com uma orient
 * Utilizar o multer para upload de arquivos CSV (para importação de alunos por turma);
 * [x] Utilizar bcryptjs para geração de hash da senha do usuário; 
 * [x] Utilizar Docker como ambiente de desenvolvimento;
-* [x] Criar testes unitários utilizando JEST;
+* [x] Desenvolver testes unitários utilizando JEST;
 * [x] Desenvolver no modelo TDD (Test-driven development);
 * [x] Trabalhar Migrations para facilitar futuras manutenções no banco de dados;
+* [ ] Desenvolver testes de integração utilizando JEST e supertest;
 
 ## 2.3 - Regras de negócio
 * [x] Não poderá realizar CRUD de turmas, alunos, cursos e anotações caso o usuário não esteja logado com um token válido (middlewares);

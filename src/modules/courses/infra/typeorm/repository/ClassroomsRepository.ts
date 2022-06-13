@@ -39,6 +39,7 @@ class ClassroomsRepository implements IClassroomsRepository {
     const classrooms = await this.repository.find({
       relations: [
         'students',
+        'course',
       ],
     });
     return classrooms;

@@ -12,8 +12,8 @@ const updateStudentController = new UpdateStudentController();
 const filterStudentsController = new FilterStudentsController();
 
 studentsRoutes.post('/', createStudentController.handle);
-studentsRoutes.delete('/:id', deleteStudentController.handle);
 studentsRoutes.put('/:id', updateStudentController.handle);
+studentsRoutes.delete('/:id', deleteStudentController.handle);
 studentsRoutes.get('/', filterStudentsController.handle);
 
 export { studentsRoutes };

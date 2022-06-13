@@ -38,7 +38,7 @@ class UpdateConversationUseCase {
 
     const checkConversation = await this.conversationsRepository.findById(conversation_id);
     if (!checkConversation) {
-      throw new BuscaAtivaException('Student not found.', 404);
+      throw new BuscaAtivaException('Conversation not found.', 404);
     }
 
     const conversation = await this.conversationsRepository.update(conversation_id, {

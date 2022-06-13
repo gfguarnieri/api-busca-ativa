@@ -86,10 +86,16 @@ describe('Update Conversation Use Case', () => {
         password: '123456',
       });
 
+      const student = await inMemoryStudentsRepository.create({
+        cellphone: '15123412345',
+        fk_classroom: '0000',
+        name: 'Student 1',
+      });
+
       await updateConversationUseCase.execute('invalid', {
         description: 'description updated',
         fk_admin: admin.id,
-        fk_student: 'invalid',
+        fk_student: student.id,
       });
     }).rejects.toBeInstanceOf(BuscaAtivaException);
   });

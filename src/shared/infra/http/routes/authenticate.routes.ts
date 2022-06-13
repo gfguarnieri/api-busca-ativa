@@ -3,6 +3,7 @@ import { Router } from 'express';
 
 const authenticateRoutes = Router();
 const authenticateAdminController = new AuthenticateAdminController();
+
 authenticateRoutes.post('/', authenticateAdminController.handle);
 
 export { authenticateRoutes };

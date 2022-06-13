@@ -34,4 +34,30 @@ describe('Filter Conversations Use Case', () => {
     });
     expect(conversationFound).toHaveLength(1);
   });
+
+  it('Should be able to list all conversations', async () => {
+    conversationsRepository.create({
+      description: 'test',
+      fk_admin: '123',
+      fk_student: '1',
+      date: new Date(2022, 0, 1),
+    });
+    const conversationFound = await filterConversationsUseCase.execute({});
+    expect(conversationFound).toHaveLength(1);
+  });
+
+  it('Should be able to list conversations by date and student id', async () => {
+    conversationsRepository.create({
+      description: 'test',
+      fk_admin: '123',
+      fk_student: '1',
+      date: new Date(2022, 0, 1),
+    });
+    const conversationFound = await filterConversationsUseCase.execute({
+      start: new Date(2021, 11, 1),
+      end: new Date(2022, 1, 1),
+      fk_student: '1',
+    });
+    expect(conversationFound).toHaveLength(1);
+  });
 });
