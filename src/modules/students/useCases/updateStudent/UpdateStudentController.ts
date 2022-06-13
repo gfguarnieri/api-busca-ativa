@@ -8,7 +8,9 @@ class UpdateStudentController {
     const { id } = request.params;
     const { fk_classroom, name, cellphone } = request.body;
     const updateStudentUseCase = container.resolve(UpdateStudentUseCase);
-    const student = await updateStudentUseCase.execute(id, { fk_classroom, name, cellphone });
+    const student = await updateStudentUseCase.execute({
+      student_id: id, fk_classroom, name, cellphone,
+    });
     return response.status(200).json(student);
   }
 }

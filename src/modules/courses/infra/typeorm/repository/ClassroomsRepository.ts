@@ -36,7 +36,11 @@ class ClassroomsRepository implements IClassroomsRepository {
   }
 
   async getAll(): Promise<Classroom[]> {
-    const classrooms = await this.repository.find();
+    const classrooms = await this.repository.find({
+      relations: [
+        'students',
+      ],
+    });
     return classrooms;
   }
 

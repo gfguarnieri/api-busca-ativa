@@ -29,13 +29,13 @@ describe('Update Student Use Case', () => {
       fk_classroom: course.id,
       name: 'Giovanni Guarnieri',
     });
-    const data = {
+    const studentUpdated = await updateStudentUseCase.execute({
+      student_id: student.id,
       cellphone: '(16) 433141234',
       fk_classroom: course.id,
       name: 'Giovanni Francesco',
-    };
-    const studentUpdated = await updateStudentUseCase.execute(student.id, data);
-    expect(studentUpdated).toMatchObject(data);
+    });
+    expect(studentUpdated).toHaveProperty('id');
   });
 
   it('Should not be able to update a student with invalid id', async () => {
@@ -50,23 +50,23 @@ describe('Update Student Use Case', () => {
         fk_classroom: course.id,
         name: 'Giovanni Guarnieri',
       });
-      const data = {
+      await updateStudentUseCase.execute({
+        student_id: student.id,
         cellphone: '(16) 433141234',
         fk_classroom: '12345',
         name: 'Giovanni Francesco',
-      };
-      await updateStudentUseCase.execute(student.id, data);
+      });
     }).rejects.toBeInstanceOf(BuscaAtivaException);
   });
 
   it('Should not be able to update a student with invalid id', async () => {
     expect(async () => {
-      const data = {
+      await updateStudentUseCase.execute({
+        student_id: '1234',
         cellphone: '(16) 433141234',
         fk_classroom: '1234',
         name: 'Giovanni Francesco',
-      };
-      await updateStudentUseCase.execute('1234', data);
+      });
     }).rejects.toBeInstanceOf(BuscaAtivaException);
   });
 });

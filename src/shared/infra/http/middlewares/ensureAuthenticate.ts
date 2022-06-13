@@ -18,7 +18,7 @@ function checkAdminUser(id: string) {
   }
 }
 
-export function ensureAdmin(request: Request, response: Response, next: NextFunction) {
+export function ensureAuthenticate(request: Request, response: Response, next: NextFunction) {
   const auth = request.headers.authorization;
   try {
     const [, token] = auth.split(' ');

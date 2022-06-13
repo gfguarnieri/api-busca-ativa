@@ -1,9 +1,14 @@
 import { BuscaAtivaException } from '@errors/BuscaAtivaException';
-import { ICreateClassroomDTO } from '@modules/courses/dtos/ICreateClassroomDTO';
 import { Classroom } from '@modules/courses/infra/typeorm/entities/Classroom';
 import { IClassroomsRepository } from '@modules/courses/repositories/IClassroomsRepository';
 import { ICoursesRepository } from '@modules/courses/repositories/ICoursesRepository';
 import { inject, injectable } from 'tsyringe';
+
+interface IRequest{
+    fk_course: string;
+    semester: number;
+    year: number;
+}
 
 @injectable()
 class UpdateClassroomUseCase {
@@ -12,7 +17,7 @@ class UpdateClassroomUseCase {
         @inject('CoursesRepository') private coursesRepository: ICoursesRepository,
   ) { }
 
-  async execute(classroom_id: string, { fk_course, semester, year }: ICreateClassroomDTO):
+  async execute(classroom_id: string, { fk_course, semester, year }: IRequest):
         Promise<Classroom> {
     const checkClassroomExists = await this.classroomsRepository.findById(classroom_id);
     const checkCourseExists = await this.coursesRepository.findById(fk_course);

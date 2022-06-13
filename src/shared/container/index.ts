@@ -4,7 +4,9 @@ import { ClassroomsRepository } from '@modules/courses/infra/typeorm/repository/
 import { CoursesRepository } from '@modules/courses/infra/typeorm/repository/CoursesRepository';
 import { IClassroomsRepository } from '@modules/courses/repositories/IClassroomsRepository';
 import { ICoursesRepository } from '@modules/courses/repositories/ICoursesRepository';
+import { ConversationsRepository } from '@modules/students/infra/typeorm/repository/ConversationsRepository';
 import { StudentsRepository } from '@modules/students/infra/typeorm/repository/StudentsRepository';
+import { IConversationsRepository } from '@modules/students/repositories/IConversationsRepository';
 import { IStudentsRepository } from '@modules/students/repositories/IStudentsRepository';
 import { container } from 'tsyringe';
 
@@ -12,3 +14,4 @@ container.registerSingleton<ICoursesRepository>('CoursesRepository', CoursesRepo
 container.registerSingleton<IClassroomsRepository>('ClassroomsRepository', ClassroomsRepository);
 container.registerSingleton<IStudentsRepository>('StudentsRepository', StudentsRepository);
 container.registerSingleton<IAdminsRepository>('AdminsRepository', AdminsRepository);
+container.registerSingleton<IConversationsRepository>('ConversationsRepository', ConversationsRepository);

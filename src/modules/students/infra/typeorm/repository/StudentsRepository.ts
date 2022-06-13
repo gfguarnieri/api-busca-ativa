@@ -37,14 +37,17 @@ class StudentsRepository implements IStudentsRepository {
   }
 
   async filter(name?: string, fk_classroom?: string): Promise<Student[]> {
-    const query = await this.repository.createQueryBuilder('student').select('*');
+    const query = this.repository.createQueryBuilder('student');
+    query.innerJoinAndSelect('student.classroom', 'classroom');
+    query.leftJoinAndSelect('student.conversations', 'conversations');
     if (name) {
-      query.andWhere('name ILIKE :name', { name: `%${name}%` });
+      query.andWhere('student.name ILIKE :name', { name: `%${name}%` });
     }
     if (fk_classroom) {
-      query.andWhere('fk_classroom = :fk_classroom', { fk_classroom });
+      query.andWhere('student.fk_classroom = :fk_classroom', { fk_classroom });
     }
-    const students = query.execute();
+
+    const students = query.getMany();
     return students;
   }
 }

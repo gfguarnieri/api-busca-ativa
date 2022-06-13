@@ -1,12 +1,15 @@
+import { config } from 'dotenv';
 import { DataSource } from 'typeorm';
+
+config();
 
 const dataSource = new DataSource({
   type: 'postgres',
-  host: 'localhost',
+  host: process.env.HOST,
   port: 5432,
-  username: 'buscaativa',
-  database: 'buscaativa',
-  password: '123456',
+  username: process.env.USER,
+  database: process.env.DATABASE,
+  password: process.env.PASSWORD,
   entities: ['./src/modules/**/entities/*.ts'],
   migrations: ['./src/**/migrations/*.ts'],
 });
