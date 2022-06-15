@@ -22,7 +22,7 @@ A análise de requisitos foi desenvolvida através de entrevistas com uma orient
 * [x] Deverá permitir o login do admin;
 * [ ] Deverá permitir o logoff do admin;
 * [ ] Deverá permitir a geração de relatórios de atendimentos por turma, definindo intervalo de datas entre os atendimentos;
-* [ ] Deverá permitir a importação de alunos para cada turma (padrão CSV);
+* [x] Deverá permitir a importação de alunos para cada turma (padrão CSV);
 
 ## 2.2 - Requisitos não funcionais
 * [x] Criar projeto no padrão SOLID;
@@ -42,7 +42,7 @@ A análise de requisitos foi desenvolvida através de entrevistas com uma orient
 * [x] Não poderá adicionar turma sem informar um curso válido;
 * [x] Não poderá adicionar aluno sem informar uma turma válida; 
 * [x] Não poderá adicionar anotações sem informar um aluno válido;
-* [ ] Não poderá adicionar um arquivo de tipo inválido; 
+* [x] Não poderá adicionar um arquivo de tipo inválido; 
 
 ## 2.4 - Modelagem Lógica da Aplicação
 Modelagem lógica da aplicação com base no levantamento da análise de requisitos:
