@@ -20,15 +20,14 @@ A análise de requisitos foi desenvolvida através de entrevistas com uma orient
 * [x] Deverá permitir a filtragem da alunos pelo id da turma;
 * [x] Deverá permitir a visualização da quantidade de anotações de cada aluno pelo ID;
 * [x] Deverá permitir o login do admin;
-* [ ] Deverá permitir o logoff do admin;
-* [ ] Deverá permitir a geração de relatórios de atendimentos por turma, definindo intervalo de datas entre os atendimentos;
-* [ ] Deverá permitir a importação de alunos para cada turma (padrão CSV);
+* [x] Deverá permitir a importação de alunos para cada turma (padrão CSV);
+* [ ] Deverá permitir a geração de filtragens de atendimentos por turma, definindo intervalo de datas entre os atendimentos;
 
 ## 2.2 - Requisitos não funcionais
 * [x] Criar projeto no padrão SOLID;
 * [x] Estruturar projeto de forma que fique escalável, possibilitando a adição de novos recursos posteriores ou troca de dependência de banco de dados (por exemplo);
 * [x] Utilizar JWT (JSON Web Token) como forma de validar o acesso do usuário;
-* Utilizar o multer para upload de arquivos CSV (para importação de alunos por turma);
+* [x] Utilizar o multer para upload de arquivos CSV (para importação de alunos por turma);
 * [x] Utilizar bcryptjs para geração de hash da senha do usuário; 
 * [x] Utilizar Docker como ambiente de desenvolvimento;
 * [x] Desenvolver testes unitários utilizando JEST;
@@ -42,7 +41,7 @@ A análise de requisitos foi desenvolvida através de entrevistas com uma orient
 * [x] Não poderá adicionar turma sem informar um curso válido;
 * [x] Não poderá adicionar aluno sem informar uma turma válida; 
 * [x] Não poderá adicionar anotações sem informar um aluno válido;
-* [ ] Não poderá adicionar um arquivo de tipo inválido; 
+* [x] Não poderá adicionar um arquivo de tipo inválido; 
 
 ## 2.4 - Modelagem Lógica da Aplicação
 Modelagem lógica da aplicação com base no levantamento da análise de requisitos:
