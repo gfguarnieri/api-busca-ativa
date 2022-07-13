@@ -4,7 +4,7 @@ import { ImportListStudentsController } from '@modules/courses/useCases/importLi
 import { ListClassroomsController } from '@modules/courses/useCases/listClassrooms/ListClassroomsController';
 import { UpdateClassroomController } from '@modules/courses/useCases/updateClassroom/UpdateClassroomController';
 import { Router } from 'express';
-import multer, { Multer } from 'multer';
+import multer from 'multer';
 
 const classroomsRoutes = Router();
 
@@ -14,12 +14,12 @@ const deleteClassroomUseCase = new DeleteClassroomController();
 const listClassroomsController = new ListClassroomsController();
 const importListStudentsController = new ImportListStudentsController();
 
-const Multer = multer({
+const multerFiles = multer({
   dest: 'files/',
 });
 
 classroomsRoutes.post('/', createClassroomController.handle);
-classroomsRoutes.post('/:id', Multer.single('list'), importListStudentsController.handle);
+classroomsRoutes.post('/:id', multerFiles.single('list'), importListStudentsController.handle);
 classroomsRoutes.put('/:id', updateClassRoomController.handle);
 classroomsRoutes.delete('/:id', deleteClassroomUseCase.handle);
 classroomsRoutes.get('/', listClassroomsController.handle);

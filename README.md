@@ -21,7 +21,7 @@ A análise de requisitos foi desenvolvida através de entrevistas com uma orient
 * [x] Deverá permitir a visualização da quantidade de anotações de cada aluno pelo ID;
 * [x] Deverá permitir o login do admin;
 * [x] Deverá permitir a importação de alunos para cada turma (padrão CSV);
-* [ ] Deverá permitir a geração de filtragens de atendimentos por turma, definindo intervalo de datas entre os atendimentos;
+* [x] Deverá permitir a geração de filtragens de atendimentos por turma, definindo intervalo de datas entre os atendimentos;
 
 ## 2.2 - Requisitos não funcionais
 * [x] Criar projeto no padrão SOLID;
