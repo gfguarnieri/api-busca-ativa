@@ -9,8 +9,8 @@ const dataSource = new DataSource({
     rejectUnauthorized: false,
   },
   url: process.env.DATABASE_URL,
-  entities: ['./src/modules/**/entities/*.ts'],
-  migrations: ['./src/**/migrations/*.ts'],
+  entities: ['./dist/modules/**/entities/*.js'],
+  migrations: ['./dist/**/migrations/*.js'],
 });
 
 dataSource.initialize().then(() => {
