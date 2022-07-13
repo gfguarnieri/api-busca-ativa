@@ -5,11 +5,10 @@ config();
 
 const dataSource = new DataSource({
   type: 'postgres',
-  host: process.env.HOST,
-  port: 5432,
-  username: process.env.USER,
-  database: process.env.DATABASE,
-  password: process.env.PASSWORD,
+  ssl: {
+    rejectUnauthorized: false,
+  },
+  url: process.env.DATABASE_URL,
   entities: ['./src/modules/**/entities/*.ts'],
   migrations: ['./src/**/migrations/*.ts'],
 });
