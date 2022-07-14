@@ -3,6 +3,7 @@ import '../typeorm';
 import '../../container';
 import 'express-async-errors';
 import { BuscaAtivaException } from '@errors/BuscaAtivaException';
+import cors from 'cors';
 import express, { NextFunction, Request, Response } from 'express';
 import { serve, setup } from 'swagger-ui-express';
 
@@ -12,6 +13,7 @@ import { router } from './routes';
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 app.use('/api-docs', serve, setup(swagger));
 
