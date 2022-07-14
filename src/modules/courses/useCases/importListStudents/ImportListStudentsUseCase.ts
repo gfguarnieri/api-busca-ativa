@@ -18,11 +18,13 @@ class ImportListStudentsUseCase {
     }
 
     studentsList.forEach(async (student) => {
-      await this.studentsRepository.create({
-        cellphone: '',
-        fk_classroom,
-        name: student,
-      });
+      if (student.trim()) {
+        await this.studentsRepository.create({
+          cellphone: '',
+          fk_classroom,
+          name: student,
+        });
+      }
     });
   }
 }
