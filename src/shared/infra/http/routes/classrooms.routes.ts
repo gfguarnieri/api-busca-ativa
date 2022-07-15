@@ -1,5 +1,6 @@
 import { CreateClassroomController } from '@modules/courses/useCases/createClassroom/CreateClassroomController';
 import { DeleteClassroomController } from '@modules/courses/useCases/deleteClassroom/DeleteClassroomController';
+import { FindClassroomController } from '@modules/courses/useCases/findClassroom/FindClassroomController';
 import { ImportListStudentsController } from '@modules/courses/useCases/importListStudents/ImportListStudentsController';
 import { ListClassroomsController } from '@modules/courses/useCases/listClassrooms/ListClassroomsController';
 import { UpdateClassroomController } from '@modules/courses/useCases/updateClassroom/UpdateClassroomController';
@@ -12,6 +13,7 @@ const createClassroomController = new CreateClassroomController();
 const updateClassRoomController = new UpdateClassroomController();
 const deleteClassroomUseCase = new DeleteClassroomController();
 const listClassroomsController = new ListClassroomsController();
+const findClassroomController = new FindClassroomController();
 const importListStudentsController = new ImportListStudentsController();
 
 const multerFiles = multer({
@@ -23,5 +25,6 @@ classroomsRoutes.post('/:id', multerFiles.single('list'), importListStudentsCont
 classroomsRoutes.put('/:id', updateClassRoomController.handle);
 classroomsRoutes.delete('/:id', deleteClassroomUseCase.handle);
 classroomsRoutes.get('/', listClassroomsController.handle);
+classroomsRoutes.get('/:id', findClassroomController.handle);
 
 export { classroomsRoutes };
