@@ -47,12 +47,14 @@ export class CreateConversations1654797326164 implements MigrationInterface {
           columnNames: ['fk_student'],
           referencedColumnNames: ['id'],
           referencedTableName: 'students',
+          onDelete: 'CASCADE',
         },
         {
           name: 'FKAdminConversations',
           columnNames: ['fk_admin'],
           referencedColumnNames: ['id'],
           referencedTableName: 'admins',
+          onDelete: 'SET NULL',
         },
       ],
     }));

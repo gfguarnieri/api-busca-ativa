@@ -40,6 +40,7 @@ export class CreateStudents1654782374030 implements MigrationInterface {
           name: 'FKClassroomStudent',
           referencedColumnNames: ['id'],
           referencedTableName: 'classrooms',
+          onDelete: 'CASCADE',
         },
       ],
     }));

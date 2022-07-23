@@ -39,6 +39,7 @@ export class CreateClassrooms1654633999199 implements MigrationInterface {
           name: 'FKCourseClassRoom',
           referencedTableName: 'courses',
           referencedColumnNames: ['id'],
+          onDelete: 'CASCADE',
         },
       ],
     }));
