@@ -10,7 +10,7 @@ import { Student } from './Student';
 class Conversation {
     @PrimaryColumn()
       id: string;
-    @ManyToOne(() => Student)
+    @ManyToOne(() => Student, { onDelete: 'CASCADE' })
     @JoinColumn({ name: 'fk_student' })
       student: Student;
     @ManyToOne(() => Admin)

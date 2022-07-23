@@ -14,7 +14,7 @@ class Classroom {
       year: number;
     @Column()
       semester: number;
-    @ManyToOne(() => Course)
+    @ManyToOne(() => Course, { onDelete: 'CASCADE' })
     @JoinColumn({ name: 'fk_course' })
       course: Course;
     @Column()

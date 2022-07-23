@@ -14,7 +14,7 @@ class Student {
       name: string;
     @Column()
       cellphone: string;
-    @ManyToOne(() => Classroom)
+    @ManyToOne(() => Classroom, { onDelete: 'CASCADE' })
     @JoinColumn({ name: 'fk_classroom' })
       classroom: Classroom;
     @OneToMany(() => Conversation, (conversation) => conversation.student)
